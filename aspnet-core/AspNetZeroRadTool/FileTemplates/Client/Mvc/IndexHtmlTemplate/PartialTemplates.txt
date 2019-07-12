@@ -1,0 +1,152 @@
+{
+"propertyTemplates":[
+		{
+			"placeholder" : "{{Property_Filter_Template_Here}}",
+			"condition" : "{{Property_Advanced_Filter_Here}} == true",
+			"templates" : [
+					{
+					"type" : "enum",
+					"content" : "
+							<div class=\"col-md-3\">
+                                <div class=\"m-stack m-stack--ver m-stack--general m-stack--demo\">
+                                    <div class=\"m-stack__item\">
+										<label for=\"{{Property_Name_Here}}FilterId\">@L(\"{{Property_Name_Here}}\")</label>
+										<div class=\"m-separator m-separator--dashed\"></div>
+										<select class=\"form-control\" name=\"{{Property_Name_Here}}Filter\" id=\"{{Property_Name_Here}}FilterId\">
+										<option value=\"-1\">@L(\"All\")</option>
+										{{Enum_Option_Looped_Template_Here}}
+										</select>
+									</div>
+								</div>
+                            </div>"
+					},
+					{
+					"type" : "bool",
+					"content" : "
+							<div class=\"col-md-3\">
+                                <div class=\"m-stack m-stack--ver m-stack--general m-stack--demo\">
+                                    <div class=\"m-stack__item\">
+										<label for=\"{{Property_Name_Here}}FilterId\">@L(\"{{Property_Name_Here}}\")</label>
+										<div class=\"m-separator m-separator--dashed\"></div>
+										<select class=\"form-control\" name=\"{{Property_Name_Here}}Filter\" id=\"{{Property_Name_Here}}FilterId\">
+										<option value=\"-1\">@L(\"All\")</option>
+										<option value=\"0\">@L(\"False\")</option>
+										<option value=\"1\">@L(\"True\")</option>
+										</select>
+									</div>
+								</div>
+                            </div>"
+					},
+					{
+					"type" : "DateTime",
+					"content" : "
+                            <div class=\"col-md-3\">
+                                <div class=\"m-stack m-stack--ver m-stack--general m-stack--demo\">
+                                    <div class=\"form-group\">
+                                        <div class=\"m-stack__item\">
+											<label>@L(\"MinMax\") @L(\"{{Property_Name_Here}}\")</label>
+											<div class=\"m-separator m-separator--dashed\"></div>
+                                            <input class=\"form-control m-input date-picker\" type=\"text\" placeholder=\"@L(\"MinValue\")\"  id=\"Min{{Property_Name_Here}}FilterId\">
+                                        </div>
+                                        <div class=\"m-stack__item\">
+                                            <input class=\"form-control m-input date-picker\" type=\"text\" placeholder=\"@L(\"MaxValue\")\"  id=\"Max{{Property_Name_Here}}FilterId\">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>"
+					},
+					{
+					"type" : "numeric",
+					"content" : "
+                            <div class=\"col-md-3\">
+                                <div class=\"m-stack m-stack--ver m-stack--general m-stack--demo\">
+                                    <div class=\"form-group\">
+                                        <div class=\"m-stack__item\">
+											<label>@L(\"MinMax\") @L(\"{{Property_Name_Here}}\")</label>
+											<div class=\"m-separator m-separator--dashed\"></div>
+											<input type=\"number\" class=\"form-control m-input\" placeholder=\"@L(\"MinValue\")\" name=\"min{{Property_Name_Here}}Filter\" id=\"Min{{Property_Name_Here}}FilterId\"/>
+                                        </div>
+                                        <div class=\"m-stack__item\">
+                                                <input type=\"number\" class=\"form-control m-input\" placeholder=\"@L(\"MaxValue\")\" name=\"max{{Property_Name_Here}}Filter\"  id=\"Max{{Property_Name_Here}}FilterId\"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>"
+					},
+					{
+					"type" : "default",
+					"content" : "
+							<div class=\"col-md-3\">
+                                <div class=\"m-stack m-stack--ver m-stack--general m-stack--demo\">
+									<div class=\"form-group\">
+                                         <div class=\"m-stack__item\">
+											<label>@L(\"{{Property_Name_Here}}\")</label>
+											<div class=\"m-separator m-separator--dashed\"></div>
+										   <input type=\"text\" class=\"form-control\" name=\"{{property_Name_Here}}Filter\"  id=\"{{Property_Name_Here}}FilterId\">
+									     </div>
+									</div>
+                                </div>
+                            </div>"
+					}
+				]
+		},
+		{
+			"placeholder" : "{{Property_Looped_Template_Here}}",
+			"condition" : "{{Property_Listed_Here}} == true",
+			"templates" : [
+					{
+					"type" : "default",
+					"content" : "
+								<th>@L(\"{{Property_Name_Here}}\")</th>"
+					}
+				]
+		}
+	],
+"navigationPropertyTemplates":[
+		{
+			"placeholder" : "{{NP_Looped_Template_Here}}",
+			"templates" : [
+					{
+					"relation" : "single",
+					"content" : "
+								<th>@L(\"{{NP_Foreign_Entity_Name_Here}}{{NP_Display_Property_Name_Here}}\")</th>"
+					}
+				]
+		},
+		{
+			"placeholder" : "{{NP_Filter_Template_Here}}",
+			"templates" : [
+					{
+					"relation" : "single",
+					"content" : "
+							<div class=\"col-md-3\">
+                                <div class=\"m-stack m-stack--ver m-stack--general m-stack--demo\">
+									<div class=\"form-group\">
+										<div class=\"form-group\">
+											<div class=\"m-stack__item\">
+												<label>(@L(\"{{NP_Foreign_Entity_Name_Here}}{{NP_Duplication_Number_Here}}\")) @L(\"{{NP_Display_Property_Name_Here}}\")</label>
+												<div class=\"m-separator m-separator--dashed\"></div>
+												<input type=\"text\" class=\"form-control\" name=\"{{nP_Foreign_Entity_Name_Here}}{{NP_Display_Property_Name_Here}}{{NP_Duplication_Number_Here}}Filter\" id=\"{{NP_Foreign_Entity_Name_Here}}{{NP_Display_Property_Name_Here}}{{NP_Duplication_Number_Here}}FilterId\">
+											</div>
+										</div>
+									</div>
+                                </div>
+                            </div>"
+					}
+				]
+		}
+	],
+"enumTemplates":[
+		{
+			"placeholder" : "{{Enum_Option_Looped_Template_Here}}",
+			"content" : "<option value=\"{{Enum_Property_Value_Here}}\">@L(\"Enum_{{Enum_Name_Here}}_{{Enum_Property_Value_Here}}\")</option>
+										"
+		},
+		{
+			"placeholder": "{{Get_Excel_Button_Here}}",
+			"condition": "{{Create_Excel_Export_Here}} == true",
+			"content": "<button id=\"ExportToExcelButton\" class=\"btn btn-outline-success\"><i class=\"fa fa-file-excel-o\"></i> @L(\"ExportToExcel\")</button>
+            "
+		}
+	]
+}
